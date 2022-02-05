@@ -1,0 +1,52 @@
+::ng-deep {
+    .setup-profile-stepper {
+        max-width: 500px;
+        
+        .mat-horizontal-stepper-header-container {
+            display: none !important;
+        }
+
+        .mat-horizontal-content-container {
+            padding: 0;
+        }
+
+        mat-stepper {
+            background-color: transparent;
+        }
+
+         ngx-avatar {
+            box-shadow: 1px 1px 9px rgb(0 0 0 / 17%);
+         }
+    }
+
+
+    .setup-avatar {
+        width:100% !important;  
+        height : 100% !important;  
+        max-width: 150px !important;  //any size
+        max-height: 150px !important; 
+
+        @media only screen and (min-width: 576px) {
+            max-width: 200px !important;  //any size
+            max-height: 200px !important; 
+        }
+    }
+
+    .change-picture {
+        transform: translate(50px, 10px);
+    }
+
+    .club-content{
+        height: calc(100vh - 310px);
+        ion-list {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        // ::ng-deep {
+            ion-checkbox .item-cover{
+                display:none;
+            }
+        // }
+    }
+}

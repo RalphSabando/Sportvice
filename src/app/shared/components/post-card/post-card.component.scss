@@ -1,0 +1,27 @@
+.postbox {
+    .content {
+        margin: 0;
+    }
+    .reactions {
+        font-size: 12px;
+        span {
+            margin: 0 0 10px 20px;
+        }
+    }
+
+    ion-slides {
+        ion-slide{
+            .img-container {
+                min-height: 175px;
+                max-height: 200px;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-color: black;
+            }
+            
+        }
+    }
+
+}

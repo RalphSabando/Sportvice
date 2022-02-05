@@ -1,0 +1,43 @@
+{
+    "common" : {
+        "language": "Language",
+        "privacy": "Privacy",
+        "something_wrong": "Something went wrong, try again later!",
+        "apply": "Apply",
+        "change": "Change",
+        "next": "Next",
+        "previous": "Previous",
+        "cancel": "Cancel",
+        "save": "Save",
+        "submit": "Submit"
+    },
+    "login_page" : {
+        "login": "Login",
+        "email": "Email",
+        "password": "Password",
+        "forgot_password": "Forgot password?"
+    },
+    "register_page" : {
+        "register": "Register",
+        "complete_name": "Complete Name",
+        "have_read": "I have read and accept the",
+        "terms_service": "Term of Service",
+        "name_required": "Name is required!",
+        "email_required": "Email is required!",
+        "email_invalid": "Invalid email address!",
+        "password_required": "Password is required!",
+        "email_used": "The email address is already in use by another account."
+        
+    },
+    "setup_profile_page": {
+        "before_start": "Before we continue, let's setup your account first!",
+        "username": "Username",
+        "username_unavailable": "This username is not available!",
+        "sports_goal": "Tell us about your sports goal...",
+        "choose_club": "Choose at most 3 preferred sports club:",
+        "userNameExists": "Username already exists!"
+    },
+    "edit_profile_page": {
+        "edit": "Edit my profile"
+    }
+}

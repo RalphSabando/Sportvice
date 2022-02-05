@@ -1,0 +1,29 @@
+<ion-card class="postbox" > 
+  <!-- <video width="500" controls *ngIf="post.video">
+      <source [src]="post.video" type="video/mp4">
+  </video>  -->
+  <!-- <img *ngIf="post.image" [src]="post.image">    -->
+  <ion-item lines="none">
+    <ion-avatar slot="start"> 
+        <img [src]="post.user?.imgUrl ? post.user.imgUrl : profileImg">
+    </ion-avatar> 
+    <ion-label>  
+        <span> <strong><a routerLink="/user"> {{ post.user.name }} </a></strong> </span>
+        <p> <a routerLink="/club"> {{ post.user.clubs[0] }}</a></p>
+    </ion-label>
+  </ion-item> 
+  <ion-slides *ngIf="post.attachments?.length">
+    <ion-slide *ngFor="let img of post.attachments">
+      <div class="img-container" [ngStyle]="{'background-image': 'url('+img+')'}"></div>
+      <!-- <img [src]="img"> -->
+    </ion-slide>
+  </ion-slides>
+  <ion-card-content *ngIf="post.content"> 
+    <ion-text>
+        <p class="content"> {{ post.content }} </p>
+    </ion-text> 
+  </ion-card-content>
+  <div class="d-flex reactions">
+    <span ion-text>123 😍😊💦</span> 
+  </div>
+</ion-card>

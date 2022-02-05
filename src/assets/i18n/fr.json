@@ -1,0 +1,42 @@
+{
+    "common" : {
+        "language": "Langue",
+        "privacy": "Privacy",
+        "something_wrong": "Une erreur s'est produite, réessayez plus tard !",
+        "apply": "Appliquer",
+        "change": "Monnaie",
+        "next": "Suivant",
+        "previous": "Précédent",
+        "cancel": "Annuler",
+        "save": "Sauver",
+        "submit": "Soumettre"
+    },
+    "login_page" : {
+        "login": "Connexion",
+        "email": "Email",
+        "password": "Password",
+        "forgot_password": "Mot de passe oublié?"
+    },
+    "register_page" : {
+        "register": "S'inscrire",
+        "complete_name": "Nom complet",
+        "have_read": "J’ai lu et j’accepte les",
+        "terms_service": "Conditions générales d’utilisation",
+        "name_required": "Le nom est requis!",
+        "email_required": "L'e-mail est requis!",
+        "email_invalid": "Adresse e-mail invalide!",
+        "password_required": "Mot de passe requis!",
+        "email_used": "L'adresse e-mail est déjà utilisée par un autre compte"
+    },
+    "setup_profile_page": {
+        "before_start": "Avant de continuer, configurons d'abord votre compte !",
+        "username": "Nom d'utilisateur",
+        "username_unavailable": "Ce nom d'utilisateur n'est pas disponible!",
+        "sports_goal": "Parlez-nous de votre objectif sportif...",
+        "choose_club": "Choisissez au maximum 3 clubs sportifs préférés:",
+        "userNameExists": "Ce nom d'utilisateur existe déjà!"
+    },
+    "edit_profile_page": {
+        "edit": "Modifier mon profil"
+    }
+}

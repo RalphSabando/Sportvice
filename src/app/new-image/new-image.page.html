@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Importer une image</ion-title>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content>
+    <!-- Upload Profil Image -->  
+            <ion-card class="ion-text-center" *ngIf="!isFileUploading && !isFileUploaded">
+              <ion-card-header>
+                <ion-card-title>Choisir une image</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-button color="blue" shape="round" size="medium">
+                  <input type="file" (change)="uploadImage($event.target.files)" />
+                </ion-button>
+                
+                <br>
+              </ion-card-content> 
+            </ion-card>
+            
+            <!-- File upload progress bar  -->
+                <div *ngIf="percentageVal | async as percentage">
+                  Progress: {{ percentage | number }}%
+                  <ion-progress-bar value="{{ percentage / 100 }}"></ion-progress-bar>
+                </div>
+            
+                <div *ngIf="trackSnapshot | async as snap">
+                  File size: {{ snap.totalBytes | formatFileSizePipe }} 
+                  
+                  Data transfered: {{ snap.bytesTransferred | formatFileSizePipe }}
+                </div>  
+</ion-content>

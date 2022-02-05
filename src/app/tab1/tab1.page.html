@@ -1,0 +1,90 @@
+<!-- <ion-header mode="ios">  
+  <ion-toolbar *ngIf="log">   
+        <ion-chip color="success" (click)="activePopular()"> 
+          <ion-label>Popular</ion-label>
+        </ion-chip>
+        <ion-chip color="medium" (click)="activeClub()"> 
+          <ion-label>Clubs</ion-label> 
+        </ion-chip>
+        <ion-chip color="medium" (click)="activeFriends()"> 
+          <ion-label>Friends</ion-label>
+        </ion-chip>
+        <ion-button fill="clear" slot="end" routerLink="/tabs/chat" color="success">  
+            <ion-icon name="chatbubble-outline"></ion-icon>
+        </ion-button>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content mode="ios">
+
+
+    <div *ngIf="progress">
+       
+    </div>
+
+     <div *ngIf="!progress">
+        <div class="contentbox" *ngIf="log">
+             
+            <div *ngIf="popular">
+                <post-card *ngFor="let post of userPosts" [post]="post"></post-card>
+                
+            
+            <div *ngIf="club">
+                <br>
+                  
+            </div>
+            
+            
+            <div *ngIf="friends">
+                <br>
+                
+            </div> 
+             
+             
+         </div> 
+         
+        </div>
+     
+      <!-- logout -->
+         <div *ngIf="!log" class="contentbox">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div>   
+                            <br> 
+                            <div style="text-align: center;"> 
+                                <img style="border-radius: 20px;" src="../../assets/logo.png"> 
+                            </div> 
+                            <br>
+                            <br>
+                            <br>
+                            <div style="margin: auto; max-width: 400px"> 
+                                <ion-button expand="block" color="success" routerLink="/signup">{{ 'register_page.register' | translate }}</ion-button>
+                                <br> 
+                                <ion-button expand="block" color="light" routerLink="/login">{{ 'login_page.login' | translate }}</ion-button>
+                            </div>
+                        </div> 
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+         </div>
+     
+    </div>
+</ion-content>
+
+<ion-footer *ngIf="!log">
+    <div class="contentbox">
+        <ion-item lines="none">
+            <ion-list>
+                <ion-item>
+                    <ion-label fill="clear" color="primary">{{ 'common.language' | translate }}</ion-label>
+                    <ion-select [value]="translation.lang" (ionChange)="selectLanguage($event.detail.value)" interface="popover">
+                      <ion-select-option *ngFor="let item of Languge" [value]="item.id">{{ item.name }}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+              </ion-list>
+            <ion-button fill="clear" routerLink="/cgu">Cgu</ion-button>
+            <ion-button fill="clear" routerLink="/privacy">Privacy</ion-button>
+        </ion-item>
+    </div>
+</ion-footer>

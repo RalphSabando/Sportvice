@@ -1,0 +1,178 @@
+<ion-header mode="ios">
+  <div class="contentbox">  
+      <ion-toolbar>
+          <ion-avatar class="logobox" slot="start">
+                <img src="../../assets/logo.png">
+            </ion-avatar> 
+                <ion-title>Football</ion-title> 
+                    <ion-button fill="clear" slot="end" (click)="presentActionSheet()" color="success">
+                        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                    </ion-button>
+        </ion-toolbar>                  
+  </div>
+</ion-header>
+
+<ion-content mode="ios"> 
+    
+    <div class="contentbox">
+        <ion-grid>
+            <ion-row>
+                
+                <ion-col class="clubsbox">
+                      <!-- Liste des clubs  
+                        <div class="scroll-box"> </div>  -->
+                        <ion-card mode="ios">
+                            <ion-toolbar color="light">  
+                                <ion-title mode="md">Clubs : </ion-title> 
+                            </ion-toolbar>
+                            <div class="clublist">
+                                <br>
+                                <div *ngFor="let club of clubs">
+                                    <ion-item lines="none" [routerLink]="['/', 'club', club.clubId]" routerDirection="root" routerLinkActive="active-item" mode="md"> 
+                                        <ion-avatar slot="start" class="club"> 
+                                            <img [src]="club.image"> 
+                                        </ion-avatar>
+                                        <ion-label>  
+                                            <h3> {{ club.name }} </h3> 
+                                        </ion-label>
+                                    </ion-item> 
+                                </div>
+                                <br>
+                                <br>
+                            </div>
+                        </ion-card>
+                </ion-col> 
+                  
+                <ion-col>
+                    <br>
+                    <!-- Liste des messages -->
+                    <div class="stream">
+                         <div>
+                             
+                             <ion-item lines="none" color="light">
+                                 <ion-avatar slot="start"> 
+                                    <img src="https://petedenis.files.wordpress.com/2012/08/img_0409.jpg">
+                                 </ion-avatar>
+                                    <ion-text slot="start" class="textbox">  
+                                        <p>exemple de text au format long pour voir si la mise en forme fonctionne bien ....</p>
+                                         <ion-chip color="medium"> 
+                                             1 😃 
+                                        </ion-chip> 
+                                        <ion-chip color="dark"> 
+                                             0 😂
+                                        </ion-chip>
+                                        <ion-chip color="success"> 
+                                             0 👍
+                                        </ion-chip> 
+                                        <ion-chip color="green"> 
+                                             0 👌
+                                        </ion-chip>
+                                        <ion-chip color="warning"> 
+                                             0 💪
+                                        </ion-chip>
+                                        <ion-chip color="danger">  
+                                             0 👎
+                                        </ion-chip>
+                                        <br>
+                                    </ion-text>
+                                    <br>
+                             </ion-item> 
+                             <br>
+                             <ion-item lines="none" color="light">
+                                 <ion-avatar slot="start"> 
+                                    <img src="https://petedenis.files.wordpress.com/2012/08/img_0409.jpg">
+                                 </ion-avatar>
+                                    <ion-text slot="start" class="textbox"> 
+                                        <img src="https://phototrend.fr/wp-content/uploads/2016/04/Guillaume-Wilmin-kickboxing-Phototrend_12-759x464.jpg">
+                                        <p>exemple de text au format long pour voir si la mise en forme fonctionne bien ....</p>
+                                        <ion-chip color="medium"> 
+                                             1 😃 
+                                        </ion-chip> 
+                                        <ion-chip color="dark"> 
+                                             0 😂
+                                        </ion-chip>
+                                        <ion-chip color="success"> 
+                                             0 👍
+                                        </ion-chip> 
+                                        <ion-chip color="green"> 
+                                             0 👌
+                                        </ion-chip>
+                                        <ion-chip color="warning"> 
+                                             0 💪
+                                        </ion-chip>
+                                        <ion-chip color="danger">  
+                                             0 👎
+                                        </ion-chip>
+                                        <br> 
+                                    </ion-text> 
+                             </ion-item>  
+                             <br>  
+                             <ion-item lines="none" color="light">
+                                 <ion-avatar slot="start"> 
+                                    <img src="https://petedenis.files.wordpress.com/2012/08/img_0409.jpg">
+                                 </ion-avatar>
+                                    <ion-text slot="start" class="textbox">  
+                                        <video width="200" controls>  
+                                           <source src="https://firebasestorage.googleapis.com/v0/b/sportvice-736fb.appspot.com/o/filesStorage%2F1623412671090_football-30-seconds-video.mp4?alt=media&token=231106e4-0365-4d26-a2d6-e7dbde71cb12" type="video/mp4">
+                                       </video> 
+                                        <p>exemple de text au format long pour voir si la mise en forme fonctionne bien ....</p>
+                                        <ion-chip color="medium"> 
+                                             1 😃 
+                                        </ion-chip>
+                                        <ion-chip color="dark"> 
+                                             0 😂
+                                        </ion-chip>
+                                        <ion-chip color="success"> 
+                                             0 👍
+                                        </ion-chip> 
+                                        <ion-chip color="green"> 
+                                             0 👌
+                                        </ion-chip>
+                                        <ion-chip color="warning"> 
+                                             0 💪
+                                        </ion-chip>
+                                        <ion-chip color="danger">  
+                                             0 👎
+                                        </ion-chip>
+                                        <br> 
+                                    </ion-text> 
+                             </ion-item>  
+                             
+                         </div>
+                    </div>
+                </ion-col> 
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+
+
+<ion-footer mode="ios">
+    <ion-grid>
+        <ion-row>
+            <ion-col class="clubsbox">
+                <div></div>
+            </ion-col>
+            
+            <ion-col>
+                <div>
+                    <ion-item lines="none" color="light" class="footerbox">
+                        <ion-button fill="clear" slot="start" color="green" (click)="openNewVideoPage()">
+                            <ion-icon name="videocam-outline"></ion-icon>  
+                        </ion-button>
+                        <ion-button fill="clear" slot="start" color="green" (click)="openNewImagePage()">
+                            <ion-icon name="image-outline"></ion-icon>  
+                        </ion-button>
+                        
+                    <!-- [(ngModel)]="postData.description" --> 
+                        <ion-input [(ngModel)]="messagetext" placeholder="votre message..."></ion-input>
+                        <ion-button slot="end" fill="clear" color="green" (click)="publish()">
+                            <ion-icon name="send-outline"></ion-icon> 
+                        </ion-button> 
+                    </ion-item>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>
+

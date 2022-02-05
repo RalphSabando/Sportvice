@@ -1,0 +1,35 @@
+<ion-content mode="ios">  
+    
+    <div class="contentbox">
+        <ion-grid>
+            <ion-row>
+                
+                <ion-col class="clubsbox">
+                      <!-- Liste des clubs  
+                        <div class="scroll-box"> </div>  -->
+                        <ion-card mode="ios">
+                            <ion-toolbar color="light">  
+                                <ion-title mode="md">Clubs : </ion-title> 
+                            </ion-toolbar> 
+                            <div class="clublist">
+                                <br>
+                                <div *ngFor="let club of clubs">
+                                    <ion-item lines="none" [routerLink]="['/', 'club', club.clubId]" mode="md" routerDirection="root" routerLinkActive="active-item"> 
+                                        <ion-avatar slot="start" class="club">
+                                            <img [src]="club.image"> 
+                                        </ion-avatar>
+                                        <ion-label>  
+                                            <h3> {{ club.name }} </h3> 
+                                        </ion-label>
+                                    </ion-item> 
+                                </div>
+                                <br>
+                                <br>
+                            </div>
+                        </ion-card>
+                </ion-col> 
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+

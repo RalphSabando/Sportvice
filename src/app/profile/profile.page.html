@@ -1,0 +1,63 @@
+<ion-header mode="ios">
+  <ion-toolbar class="headerbox"> 
+      <ion-button fill="clear" slot="start" routerLink="/tabs/tab1" color="success">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button> 
+    <ion-title mode="md"> {{ userData.name }} </ion-title>
+    <ion-chip slot="end" color="success"> {{ userData.role }} </ion-chip>
+    <ion-button fill="clear" slot="end" routerLink="/tabs/settings" color="success">
+          <ion-icon name="settings-outline"></ion-icon>
+      </ion-button> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios"> 
+    <div class="contentbox">
+        <ion-grid>
+            <ion-row class="headerbox">
+                <ion-col class="firstcol"> 
+                    <div>
+                        <ion-avatar>
+                            <img [src]="userData.image">
+                        </ion-avatar>
+                    </div>
+                </ion-col>  
+                <ion-col class="secondcol">
+                    <div>
+                        <br>
+                        <!-- Liste des clubs de l'utilisateur -->
+                            <ion-chip [color]="club.color" *ngFor="let club of clubs">  
+                              <ion-label> {{ club.name }} </ion-label> 
+                            </ion-chip>
+                    </div>
+                </ion-col>  
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <div class="goalbox">
+                        <ion-text> 
+                            <h3>Mon objectif : </h3>
+                            <p> {{ userData.description }} </p> 
+                        </ion-text> 
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        
+        
+       <div class="postbox">
+                <!-- Liste des Posts de l'utilisateur --> 
+                <br>
+                <ion-card *ngFor="let post of posts">
+                    <div>
+                        <img [src]="post.image">
+                    </div>
+                    <ion-item lines="none"> 
+                        <p>  {{ post.description }}  </p>
+                    </ion-item> 
+                </ion-card>
+        </div> 
+      
+      </div>
+    
+</ion-content>

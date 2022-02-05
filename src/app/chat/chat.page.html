@@ -1,0 +1,33 @@
+<ion-content mode="ios"> 
+    <div class="contentbox">
+        <ion-grid>
+            <ion-row>
+                
+                <ion-col class="clubsbox">
+                      <!-- Liste des clubs  
+                        <div class="scroll-box"> </div>  -->
+                        <ion-card mode="ios">
+                            <ion-toolbar color="light">  
+                                <ion-title mode="md">Discussions : </ion-title>  
+                            </ion-toolbar> 
+                            <br>
+                            <div *ngFor="let user of users">
+                                <ion-item lines="none" [routerLink]="['/', 'chatbox', user.userId]" mode="md" routerDirection="root" routerLinkActive="active-item"> 
+                                    <ion-avatar slot="start" class="club">
+                                        <img [src]="user.image"> 
+                                    </ion-avatar>
+                                    <ion-label>  
+                                        <h3> {{ user.name }} </h3> 
+                                    </ion-label>
+                                </ion-item> 
+                            </div>
+                            <br>
+                            <br>
+                        </ion-card>
+                </ion-col> 
+            </ion-row>
+        </ion-grid>
+        
+    
+    </div>
+</ion-content>

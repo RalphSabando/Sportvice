@@ -1,0 +1,65 @@
+<ion-header [translucent]="true" mode="ios">
+  <ion-toolbar>
+    <ion-title mode="md" color="green">Nouvelle publication</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" mode="ios">
+    
+    <div class="contentbox" *ngIf="!publish">  
+    
+    <br>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-toolbar>
+                    <ion-button slot="end" color="green" shape="round" (click)="getImage()">   
+                        Suivant Image
+                    </ion-button>
+                    <ion-button slot="end" color="danger" shape="round" (click)="getVideo()">
+                        Suivant video
+                    </ion-button>
+                </ion-toolbar>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <div>
+                    <ion-item lines="none">
+                        <ion-textarea [(ngModel)]="text" placeholder="Votre texte..." rows="6"></ion-textarea> 
+                    </ion-item>
+                </div>
+            </ion-col>
+            <ion-col>  
+                <div>
+                    <img [src]="image"> 
+                    <video width="200" controls>
+                        <source [src]="video" type="video/mp4">
+                    </video>
+                </div>
+            </ion-col>
+        </ion-row> 
+    </ion-grid>
+    <ion-item lines="none">
+        <ion-button color="green" fill="clear" (click)="openNewImagePage()" slot="end">
+            <ion-icon slot="start" name="image-outline"></ion-icon> Importer une image
+        </ion-button>
+        <ion-button color="green" fill="clear" (click)="openNewVideoPage()" slot="end">
+            <ion-icon slot="start" name="videocam-outline"></ion-icon> Importer une video
+        </ion-button>  
+    </ion-item>
+    <br>
+    <ion-toolbar>
+            <ion-button slot="end" color="medium" (click)="publishPost()">  
+                Publier
+            </ion-button>
+    </ion-toolbar>
+        
+        
+        
+    </div>
+  
+</ion-content>
+
+
+

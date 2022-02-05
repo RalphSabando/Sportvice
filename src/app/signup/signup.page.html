@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" size-md>
+                <div></div>
+            </ion-col>
+            <ion-col size="12" size-md>
+                <div>
+                    <ion-card mode="md" color="light">  
+                        <ion-card-content>
+                            <div class="loginbox">
+                                <!-- Loader  -->
+                                <div *ngIf="page" class="loader" style="text-align: center;">
+                                    <br> 
+                                    <ion-spinner name="crescent"></ion-spinner>
+                                    <br>
+                                    <p>Inscription...</p>
+                                    <br> 
+                                </div> 
+                                
+                                <!-- Signup Form -->
+                                <div *ngIf="!page">
+                                    <div>
+                                        <form [formGroup]="signupForm">
+                                            <ion-item>
+                                                <ion-input formControlName="name" [placeholder]="'register_page.complete_name' | translate"></ion-input> 
+                                            </ion-item>   
+                                            <div *ngIf="submitted && signupForm.get('name').dirty && signupForm.get('name').hasError('required')">
+                                                <mat-error>{{ 'register_page.name_required' | translate }}</mat-error>
+                                            </div>
+                                            <br> 
+                                            <ion-item>
+                                                <ion-input formControlName="email" type="mail" [placeholder]="'login_page.email' | translate"></ion-input> 
+                                            </ion-item>
+                                            <div *ngIf="submitted && signupForm.get('email').dirty && signupForm.get('email').hasError('required')">
+                                                <mat-error>{{ 'register_page.email_required' | translate }}</mat-error>
+                                            </div>
+                                            <div *ngIf="submitted && signupForm.get('email').dirty && signupForm.get('email').hasError('email')">
+                                                <mat-error>{{ 'register_page.email_invalid' | translate }}</mat-error>
+                                            </div>
+                                            <br> 
+                                            <ion-item> 
+                                                <ion-input formControlName="password" [type]="passwordType" [placeholder]="'login_page.password' | translate"></ion-input>
+                                                <ion-icon (click)="togglePassword()" [name]="iconType"></ion-icon>
+                                            </ion-item>
+                                            <div *ngIf="submitted && signupForm.get('password').dirty && signupForm.get('password').hasError('required')">
+                                                <mat-error>{{ 'register_page.password_required' | translate }}</mat-error>
+                                            </div>
+                                            <br> 
+                                            <ion-item>
+                                                <ion-label class="ion-text-wrap">
+                                                    <p>{{ 'register_page.have_read' | translate }} <a href="/cgu">{{ 'register_page.terms_service' | translate }}.</a></p>
+                                                </ion-label>
+                                                <ion-checkbox formControlName="checked" color="success" slot="end"></ion-checkbox> 
+                                            </ion-item>
+                                        </form>
+                                        <br> 
+
+                                        <ion-button [disabled]="!signupForm.valid" color="success" mode="md" (click)="signup()" expand="block">
+                                            {{ 'register_page.register' | translate }}
+                                        </ion-button> 
+                                    </div>
+                                    <br> 
+                                    <br>
+                                </div>
+                            </div>
+                        </ion-card-content>
+                    </ion-card> 
+                    <br> 
+                </div>
+            </ion-col>
+            <ion-col size="12" size-md>
+                <div></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+</ion-content>

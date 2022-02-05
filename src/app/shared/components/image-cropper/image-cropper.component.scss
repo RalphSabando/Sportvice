@@ -1,0 +1,14 @@
+::ng-deep {
+    .image-cropper-modal {
+        .mat-dialog-container {
+            max-width: 500px;
+        }
+
+        .ngx-ic-cropper.rounded {
+            border-radius: 50%;
+
+            --cropper-outline-color: rgba(25, 148, 72, 0.158);
+        }
+    }
+
+}

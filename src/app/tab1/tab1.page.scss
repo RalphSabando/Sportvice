@@ -1,0 +1,24 @@
+ion-toolbar {
+    --ion-background-color: transparent;
+    max-width: 800px;
+    margin: auto;
+} 
+
+.contentbox {
+    max-width: 550px;
+    margin: auto;
+} 
+
+.logobox {
+    margin: auto;
+}
+
+.postbox {
+    width: 500px; 
+}
+
+.iconbox {
+    position: relative; 
+    top: -170px; 
+    text-align: center;
+}
