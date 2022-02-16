@@ -63,7 +63,7 @@ export class SignupPage implements OnInit {
   
   
   signup() {
-    console.log('signup', this.signupForm);
+    // console.log('signup', this.signupForm);
     if(this.signupForm.valid) {
       this.submitted = true;
       this.afAuth.createUserWithEmailAndPassword(this.signupForm.get('email').value, this.signupForm.get('password').value)
@@ -74,9 +74,9 @@ export class SignupPage implements OnInit {
                     email: this.signupForm.get('email').value
                   })
                   // this.createUserInfo(auth.user.uid); 
-                  // this.page = false;
-                  // this.log = true; 
-                  // this.router.navigateByUrl('/profile-edit');
+                  this.page = false;
+                  this.log = true; 
+                  this.router.navigateByUrl('/setup-profile');
             }) .catch(err => { 
                   console.log('Error: ' + err);
                   console.log(err.toString().includes('email-already-in-use'));

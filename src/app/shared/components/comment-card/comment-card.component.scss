@@ -1,0 +1,23 @@
+.comment-card-container {
+    margin-bottom: 4px;
+    padding: 8px;
+
+    .commenter {
+        margin-right: auto;
+        ion-label {
+            margin: 4px 0px 4px 8px;
+        }
+    }
+    .comment-content {
+        flex-grow: 1;
+        padding: 4px 30px 4px 56px;
+        img {
+            max-height: 275px;
+            display: block;
+        }
+    }
+
+    .comment-footer {
+        font-size: 12px;
+    }
+}

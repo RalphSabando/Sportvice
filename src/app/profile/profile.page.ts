@@ -18,9 +18,34 @@ export class ProfilePage implements OnInit {
       image: '',
       role: '' 
     };
+    croppedImg: any = 'https://st2.depositphotos.com/1006318/5909/v/600/depositphotos_59095205-stock-illustration-businessman-profile-icon.jpg';
+    profileImg: string = `assets/profile_avatar_placeholder.png`;
     
     public posts: any;
     public clubs: any;
+
+    userPosts = [ 
+      { 
+        id: 1, 
+        content: "Lorem Ipsum", 
+        user: {
+          name: "John Doe",
+          clubs: ["Football's Club"],
+          imgUrl: ""
+        },
+        attachments: ["https://media.istockphoto.com/photos/silhouette-action-sport-picture-id1272269793?b=1&k=20&m=1272269793&s=170667a&w=0&h=xie_NP8GQ6LFpiA0WLqoVUF7y2wyebpCJDQ4wJwPy40=",
+      "https://upload.wikimedia.org/wikipedia/commons/9/92/Youth-soccer-indiana.jpg","https://i.pinimg.com/originals/63/00/82/63008254d66e382e44b48edd327b0c0a.jpg"]
+      },
+      { 
+        id: 2, 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur semper hendrerit nisi ut convallis. Nunc at ultricies leo. Mauris in justo at metus porttitor consequat quis ac sem. In non congue leo.", 
+        user: {
+          name: "Jane Doe",
+          clubs: ["Volleyball's Club"],
+          imgUrl: ""
+        }
+      },
+    ]
 
   constructor(
       public toastController: ToastController,

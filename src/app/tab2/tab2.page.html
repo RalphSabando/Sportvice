@@ -1,35 +1,20 @@
 <ion-content mode="ios">  
-    
+    <ion-header mode="ios">
+        <ion-toolbar class="headerbox ion-no-border"> 
+          <ion-title mode="md">SnowBoard's Club</ion-title>
+          <!-- <ion-chip slot="end" color="success"> {{ userData.role }} </ion-chip> -->
+          <ion-button fill="clear" slot="end" routerLink="/tabs/settings" color="success">
+                <ion-icon name="ellipsis-vertical"></ion-icon>
+            </ion-button> 
+        </ion-toolbar>
+      </ion-header>
+      
+      <div class="d-flex clublist">
+          <div [ngClass]="{'active': club?.active}" *ngFor="let club of clubs" [ngStyle]="{'background-image': 'url('+club.imgUrl+')'}" class="club"></div>
+      </div>
+
     <div class="contentbox">
-        <ion-grid>
-            <ion-row>
-                
-                <ion-col class="clubsbox">
-                      <!-- Liste des clubs  
-                        <div class="scroll-box"> </div>  -->
-                        <ion-card mode="ios">
-                            <ion-toolbar color="light">  
-                                <ion-title mode="md">Clubs : </ion-title> 
-                            </ion-toolbar> 
-                            <div class="clublist">
-                                <br>
-                                <div *ngFor="let club of clubs">
-                                    <ion-item lines="none" [routerLink]="['/', 'club', club.clubId]" mode="md" routerDirection="root" routerLinkActive="active-item"> 
-                                        <ion-avatar slot="start" class="club">
-                                            <img [src]="club.image"> 
-                                        </ion-avatar>
-                                        <ion-label>  
-                                            <h3> {{ club.name }} </h3> 
-                                        </ion-label>
-                                    </ion-item> 
-                                </div>
-                                <br>
-                                <br>
-                            </div>
-                        </ion-card>
-                </ion-col> 
-            </ion-row>
-        </ion-grid>
+        <comment-card [comment]="item" *ngFor="let item of messages"></comment-card>
     </div>
 </ion-content>
 

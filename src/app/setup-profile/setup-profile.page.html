@@ -90,7 +90,7 @@
                   <ion-button color="light" *ngIf="stepper.selectedIndex > 0" size="medium" (click)="previous()" slot="end">
                     {{ 'common.previous' | translate }} 
                   </ion-button>
-                  <ion-button [disabled]="!searching || userName.invalid || userNameExists" size="medium" color="success" (click)="next()" slot="end">
+                  <ion-button [disabled]="!searching || userName.invalid || userNameExists" size="medium" color="success" (click)="save()" slot="end">
                     {{ 'common.save' | translate }} 
                   </ion-button>
                 </div>

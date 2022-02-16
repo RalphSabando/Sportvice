@@ -3,7 +3,7 @@
       <source [src]="post.video" type="video/mp4">
   </video>  -->
   <!-- <img *ngIf="post.image" [src]="post.image">    -->
-  <ion-item lines="none">
+  <ion-item *ngIf="!self" lines="none">
     <ion-avatar slot="start"> 
         <img [src]="post.user?.imgUrl ? post.user.imgUrl : profileImg">
     </ion-avatar> 

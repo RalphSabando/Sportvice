@@ -30,13 +30,37 @@ ion-item {
 
 .clublist {
     overflow: scroll;
-    height: 300px;  
+    // height:50px;
+    scrollbar-width: none;
+    padding:10px;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .club {
+        display: inline-block;
+        width: 50px;
+        flex-shrink: 0;
+        height: 50px;
+        border-radius: 5px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+        cursor: pointer;
+        &:not(:first-child) {
+            margin-left:10px;
+        }
+        &.active {
+            border: 2px solid #199449;
+        }
+    }
 }
  
-.club {
-  height: 50px; 
-  width: 50px; 
-} 
+// .club {
+//   height: 50px; 
+//   width: 50px; 
+// } 
 
 .club img {
     border-radius: 15px;  

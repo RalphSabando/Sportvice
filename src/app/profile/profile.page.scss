@@ -3,6 +3,8 @@ ion-avatar {
     width: 120px; 
 }
 
+
+
 .headerbox {
     margin: auto;  
     max-width: 800px; 
@@ -19,10 +21,22 @@ ion-avatar {
 
 .contentbox {
     margin: auto;
-    max-width: 500px;    
+    max-width: 500px;
+     
+    .club-chips {
+        margin-left: 10px;
+    }
 }
 
 .postbox { 
     margin: auto;
     max-width: 500px;   
+    margin-bottom: 20px;
+}
+
+.profile-container {
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 0 25px rgb(0 0 0 / 20%);
 }

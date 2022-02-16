@@ -1,0 +1,26 @@
+<ion-card>
+  <div class="comment-card-container d-flex flex-column">
+    <div class="d-flex ion-justify-content-between">
+      <div class="d-flex commenter">
+        <ion-avatar slot="start"> 
+          <img [src]="comment.userDetails.imgUrl ?? profileImg">
+        </ion-avatar> 
+        <ion-label>  
+          <span> <strong><a routerLink="/user"> {{ comment.userDetails.name }} </a></strong> </span>
+          <!-- <p><a routerLink="/club"> {{ post.user.clubs[0] }}</a></p> -->
+        </ion-label>
+      </div>
+      <span class="add-reaction">
+        <ion-icon name="happy-outline"></ion-icon>
+      </span>
+
+    </div>
+    <div class="comment-content" [innerHtml]="sanitizeHtml(comment.content)"></div>
+    <div class="comment-footer d-flex ion-justify-content-between">
+      <span class="reaction" ion-text>123 😍😊💦</span>
+      <span>{{ convertToTime(comment.created_at) }}</span> 
+    </div>
+    
+    
+  </div>
+</ion-card>

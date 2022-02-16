@@ -11,6 +11,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ImageCropperComponent } from './components/image-cropper/image-cropper.component';
 import { PostCardComponent } from './components/post-card/post-card.component';
+import { CommentCardComponent } from './components/comment-card/comment-card.component';
 
 const materials = [
   MatTabsModule,
@@ -29,7 +30,8 @@ const sharedModules = [
 
 const components = [
   ImageCropperComponent,
-  PostCardComponent
+  PostCardComponent,
+  CommentCardComponent
 ]
 
 @NgModule({

@@ -76,8 +76,8 @@
     <div class="contentbox">
         <ion-item lines="none">
             <ion-list>
-                <ion-item>
-                    <ion-label fill="clear" color="primary">{{ 'common.language' | translate }}</ion-label>
+                <ion-item class="language-picker">
+                    <ion-label fill="clear" color="primary ion-text-uppercase">{{ 'common.language' | translate | titlecase}}</ion-label>
                     <ion-select [value]="translation.lang" (ionChange)="selectLanguage($event.detail.value)" interface="popover">
                       <ion-select-option *ngFor="let item of Languge" [value]="item.id">{{ item.name }}</ion-select-option>
                     </ion-select>
